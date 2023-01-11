@@ -1,0 +1,23 @@
+body h1:first-of-type {
+    color: pink;
+}
+
+/* body h1:first-child {
+    color: pink;
+} */
+
+/* h1:active {
+    color: pink;
+    cursor: pointer;
+} */
+
+/* h1:hover {
+    color: pink;
+    cursor: pointer;
+} */ 
+
+
+body > p:first-of-type:hover {
+    color: orange;
+  }
+/* porque afecta solo al nieto, no a los hijos directos */
