@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./style.css"/> -->
+    <title>Media Queries</title>
+
+    <!-- Esto es lo que iría en el style.css -->
+    <!-- display: block; (es para que se vea el objeto) -->
+    <!-- display: none; (es para que no se vea ek objeto) -->
+    
+    <style> 
+        /* Small screens - MOBILE */
+        @media only screen and (max-width: 40em) { 
+            .first-group{
+                display:block;
+            }
+            .second-group{
+                display:none;
+            }
+            .third-group{
+                display:none;
+            }
+            
+            /* ESTA SERÍA UNA MEJOR PRÁCTICA */
+            /* .second-group, .third-group{
+                display:none;
+            } */
+
+        } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+ 
+        /* Medium screens - TABLET */
+        @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+            .first-group{
+                display:none;
+            }
+            .second-group{
+                display:block;
+            }
+            .third-group{
+                display:none;
+            }
+         } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+  
+        /* Large screens - DESKTOP */
+        @media only screen and (min-width: 64.063em) {
+            .first-group{
+                display:none;
+            }
+            .second-group{
+                display:none;
+            }
+            .third-group{
+                display:block;
+            }
+         } /* min-width 1025px, large screens */
+
+
+    </style>
+</head>
+<body>
+    <h1 class="first-group">Charlie Cunningham</h1>
+    <h1 class="second-group">Pink</h1>
+    <h1 class="third-group">First Aid Kid</h1>
+</body>
+</html>

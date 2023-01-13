@@ -1,0 +1,119 @@
+body{
+    background: pink;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+/* También se podría utilizar el selector universal */
+
+/* Esto sería para el div que incluye el h1
+.firt-container {
+ position: fixed; o también podría haber sido position: sticky. Both are accepted
+ top: 0;
+ background: red;
+ width: 100vw;
+ z-index: index 1;
+ height: 20px;
+} */
+
+/* h1 {
+    margin-top: 0;
+    font-size: 16px;
+    text-align: center;
+} */
+
+/* Esto sería para el segundo div que contiene las imagenes
+.second-container {
+    height: 650px;
+    width: 650px;
+    background: blue;
+    position: relative; (este es el box que va a acoger las imagenes) El hijo se cree absoluto y hace lo que quiere para eso el padre tiene que tener una posición relativa
+    top: 50px;
+    left: 50px;
+} */
+
+/* Queremos dimensionar las imagenes
+img {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+} */
+
+
+.nav {
+    position: sticky;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 650px;
+    height: 650px;
+    left: 150px;
+}
+
+.images{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+
+/* Creamos una clase específica para cada imagen para poderlas posicionar en el lado que queremos */
+
+.img1{
+    top: 150px;
+    left: 150px;
+}
+
+/* Respecto al padre que es el div se posiciona en el punto 0 0 que es la izquierda superior
+.img1{
+    top: 0px;
+    left: 0px;
+} */
+
+.img2{
+    top: 150px;
+    right: 150px;
+}
+
+/* .img2{
+    top: 0px;
+    right: 0px;
+} */
+
+.img3{
+    bottom: 150px;
+    left: 150px;
+}
+
+
+.img4{
+    bottom: 150px;
+    right: 150px;
+}
+
+Otro approach de especificidad (version 2)
+
+body{
+    margin: 0;
+    padding: 0;
+} 
+
+/* Esto afectaría al div del h1: body > div:first-of-type{}
+
+body > div:first-of-type h1{}
+
+Esto afectaría al div de las imagenes: body > div:last-of-type{}
+
+body > div:last-of-type img{}
+
+body > div:last-of-type img:nth-child(1){}
+
+body > div:last-of-type img:nth-child(2){}
+
+body > div:last-of-type img:nth-child(3){}
+
+body > div:last-of-type img:nth-child(4){} */

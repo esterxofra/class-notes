@@ -1,0 +1,62 @@
+.container{
+display: grid; 
+height: 100vh; 
+grid-template-columns: auto 1fr;
+grid-template-rows: auto auto 1fr; 
+
+}
+
+.header{
+    background: green;
+    grid-column: 1/3;
+    /* grid-row: 1/ 2; */
+}
+
+.navbar{
+    background: blue;
+    grid-column: 1/ 3;
+}
+
+.sidebar{
+    background: violet;
+    grid-column: 1/ 2;
+    grid-row: 3/4;
+}
+
+.main{
+    background: yellow;
+}
+
+/* Variation - 002
+
+.container{
+    display: grid; 
+    height: 100vh; 
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr; 
+    grid-template-areas:
+        "header header header"
+        "navbar navbar navbar"
+        "sidebar main main"
+    }
+    
+    .header{
+        background: green;
+        grid-area: header;
+    }
+    
+    .navbar{
+        background: blue;
+        grid-area: navbar;
+    }
+    
+    .sidebar{
+        background: violet;
+        grid-area: sidebar;
+    }
+    
+    .main{
+        background: yellow;
+        grid-area: main;
+    } */
+

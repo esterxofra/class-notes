@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    overflow-x:hidden;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+}
+
+/* Header section styling */
+
+header {
+    height: 500px;
+    width: 100vw;
+    background-image: url("../images/apple-pie.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* FLEX properties */
+    display: flex;
+    /* x-axis */
+    justify-content: center;
+    /* y-axis */
+    align-items: center;
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 3rem;
+ }
+
+/* Main section styling */
+
+main img{
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+
+main{
+    padding: 4rem;
+}
+
+main section{
+    padding: 1rem 0;
+
+}
+
+#recipe-information{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 2.5rem 0;
+    text-align: justify;
+}
+
+#ingredients ul{
+    list-style-type:"- ";
+    margin: 0 0 1rem 1rem;
+}
+
+#directions ol{
+    list-style-type: none;
+    counter-reset: section;
+}
+
+#directions ol li::before{
+    content: "" counter(section)") ";
+    counter-increment: section;
+}
+
+#directions li{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 1rem 1rem;
+}
+
+/* h1{
+    display: block;
+    width: 100vw;
+    text-align: center;
+    color: white; 
+    margin: auto;
+    position:absolute;
+}
+
+.general {
+    margin: 0px 80px 0px 80px;
+}
+
+img{
+    width: 100vw;
+    object-fit: scale-down;
+} */
