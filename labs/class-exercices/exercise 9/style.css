@@ -1,0 +1,36 @@
+div{
+    animation-name: wu-tang;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wu-tang{
+0% {
+    width: 100px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: orange;
+}
+25%, 75% {
+    width: 200px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+    background: blue;
+}
+50%, 100% {
+    width: 20px;
+    height: 20px;
+    left: 0px;
+    top: 0px;
+    background: yellow;
+}
+
+
+}
