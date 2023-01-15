@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/* CSS reset */
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
 }
 
+/* General Styling */
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     overflow-x:hidden;
 }
 
+/* Titles sections */
 h2{
     font-size: 2rem;
     font-weight: 300;
@@ -19,10 +21,8 @@ h2{
 }
 
 /* Header section styling */
-
 header {
     height: 500px;
-    width: 100vw;
     background-image: url("../images/apple-pie.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -38,13 +38,14 @@ header {
 header h1 {
     font-weight: 400;
     font-size: 3rem;
+    color: white;
  }
 
 /* Main section styling */
 
 main img{
     width: 50%;
-    display: flex;
+    display: block;
     margin: 0 auto;
 }
 
@@ -57,7 +58,7 @@ main section{
 
 }
 
-#recipe-information{
+#recipe-information p{
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0 0 2.5rem 0;
@@ -67,6 +68,8 @@ main section{
 #ingredients ul{
     list-style-type:"- ";
     margin: 0 0 1rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 #directions ol{
@@ -85,20 +88,3 @@ main section{
     margin: 0 0 1rem 1rem;
 }
 
-/* h1{
-    display: block;
-    width: 100vw;
-    text-align: center;
-    color: white; 
-    margin: auto;
-    position:absolute;
-}
-
-.general {
-    margin: 0px 80px 0px 80px;
-}
-
-img{
-    width: 100vw;
-    object-fit: scale-down;
-} */
