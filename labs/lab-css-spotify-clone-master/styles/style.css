@@ -7,44 +7,54 @@ White: #FFF
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 /* CSS reset */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat";
-    font-size: 16px;
-    overflow-x:hidden;
+
 /* for testing */
-    outline: 1px solid red;
-}
+    /* outline: 1px solid red; */
+    }
 
 /* general styling */
 
+body{
+    font-family: "Roboto", sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    font-size: 16px;
+    }
 
 /* Styling header section */
-.container{
+
+header{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    margin: 0 auto;
-    padding: 10px 20px;
-}
+    padding: 1rem;
+    z-index: 2;
+    }
 
-header div{
-width: 50%;
-display: flex;
-justify-content: space-around;
-}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-.logo{
-    width: auto;
-    height: 50px; 
-}
+nav ul li {
+    margin: 0 1rem 0 0;
+    }
+  
+header img {
+    width: 160px;
+    }
 
 /* Styling main section */
+
 main{
     background-image: url("../images/landing.jpg");
     background-repeat: no-repeat;
@@ -60,53 +70,135 @@ main{
     position: relative;
 }
 
-h1{
-    font-weight: bold;
+main h1 {
     font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
     color: #FFF;
     }
 
-main .quote{
-    font-size: 2em;
-    position: absolute;
-    bottom: 100px; 
+main p {
+    font-size: 1rem;
+    font-weight: 400;
     color: #FFF;
-    text-align: center;
-    margin: 0 20%;
     }
 
-/* Styling section 1 */
-.info-box{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evently;
-    width: 370px;
-    }
+/* Styling section 1 - What's on Spotify */
 
-.icon{
-    width: 150px;
-    margin: 0 auto;
-    padding: 75px 0;
-    gap: 30%;
-    }
-
-  /* .text {
-    font-size: 2em;
-    text-align: center;
-    font-weight: 100;
-    margin: 20px 0px;
-  }
-
-  #general-information {
-    display: flex;
-    
-  }
-  
-  #general-information .container {
+section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+    }
+section:nth-of-type(1) h2 {
+    /* border-bottom: 1px solid green; */
+    text-decoration: underline #00b172;
+    margin-bottom: 2rem;
+    }
+  
+section:nth-of-type(1) h4 {
+    color: #00b172;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    }
+
+section:nth-of-type(1) p {
+    font-weight: 400;
+    }
+
+section:nth-of-type(1) div {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 370px;
-    
-  } */
+    padding: 0 rem;
+    }
+
+section:nth-of-type(1) .iconbox img {
+    width: 100px;
+    margin-bottom: 1rem;
+    }
+  
+section:nth-of-type(1) .iconbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    }
+
+/* Styling section 2 */
+
+section:nth-of-type(2) {
+    padding: 2rem;
+    }
+  
+section:nth-of-type(2) h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fafafa;
+    width: 100%;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+    text-align: left;
+    }
+
+/* External Div - Father Element */
+
+section:nth-of-type(2) div {
+    background: #00b172;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    }
+
+/* Internal Div - Child Element */
+.internalGreen {
+    padding: 2rem 0 2rem 2rem;
+    display: flex;
+    justify-content:left;
+    }
+  
+section:nth-of-type(2) div > div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    }
+  
+.textBlock h5 {
+    margin-bottom: 2rem;
+    color: #fafafa;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: 670%;
+     }
+
+.textBlock p {
+    color: #fafafa;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    width: 70%;
+    }
+
+.spotifyWhite {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    }
+
+.spotifyWhite img {
+    width: 40%;
+    }
+
+.spotifyApp {
+    display: flex;
+    padding: 2rem;
+    }
+
+.spotifyApp img {
+    width: 100%;
+    }
