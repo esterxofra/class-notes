@@ -5,9 +5,9 @@
 // 1.4 Print "The navigator's name is YYYY".
 
 let hacker1 = "Ester";
-console.log(`The driver's name is ${hacker1}`);
-
 let hacker2 = "Guillem";
+
+console.log(`The driver's name is ${hacker1}`);
 console.log(`The navigator's name is ${hacker2}`);
 
 
@@ -16,13 +16,9 @@ console.log(`The navigator's name is ${hacker2}`);
 // Iteration 2: Conditionals
 // 2.1. Depending on which name is longer, print:
 
-let hacker1Lenght = hacker1.length;
-let hacker2Lenght = hacker2.length;
-
-
 if (hacker1.length > hacker2.length) {console.log(`The driver has the longest name, it has ${hacker1.length}`);}
 else if (hacker1.length < hacker2.length) {console.log(`It seems that the navigator has the longest name, ${hacker2.length} characters!`);}
-else if (hacker1.length === hacker2.length) {console.log(`Wow, you both have equally long names, ${hacker1.length} characters!`);}
+else (hacker1.length === hacker2.length) {console.log(`Wow, you both have equally long names, ${hacker2.length} characters!`);}
 
 
 
@@ -37,14 +33,14 @@ for (let i=0;
     i ++)
   {console.log(`Index: ${i} - element: ${upperCase[i]}`);}
 
-// 3.2 Print all the characters of the navigator's name, in reverse order, i.e., "nhoJ".
+// // 3.2 Print all the characters of the navigator's name, in reverse order, i.e., "nhoJ".
 
 function reverseString(hacker2) {
   return hacker2.split("").reverse().join("");
 }
 console.log(hacker2);
 
-// ____________
+// // ____________
 
 function reverseString(hacker2) {
 
