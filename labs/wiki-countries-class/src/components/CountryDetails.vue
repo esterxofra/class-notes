@@ -1,22 +1,3 @@
-<!-- HTML HERE -->
-<template>
-  <!-- it has to be lower case: https://flagcdn.com/w320/za.png -->
-  <img
-    :src="`https://flagcdn.com/112x84/${countryInfo.alpha2Code.toLowerCase()}.png`"
-    :alt="`${countryInfo.name.common}`"
-  />
-  <h1>{{ countryInfo.name.common }}</h1>
-  <p>{{ countryInfo.capital[0] }}</p>
-  <p>{{ countryInfo.area }} km<sup>2</sup></p>
-  <p v-if="countryInfo.borders.length === 0">
-    Este país no tiene una fontera, es una isla
-  </p>
-  <ul v-else v-for="(borderCountry, index) in countryInfo.borders" :key="index">
-    <RouterLink :to="`/country/${borderCountry}`">{{
-      borderCountry
-    }}</RouterLink>
-  </ul>
-</template>
 <!-- JS HERE -->
 <script setup>
 import { watch, ref, onMounted, computed } from "vue";
@@ -65,5 +46,41 @@ watch(countryCode, (newCountryCode) => {
   getCountryByAlphaCode();
 });
 </script>
+
+<!-- HTML HERE -->
+<template>
+  <!-- it has to be lower case: https://flagcdn.com/w320/za.png -->
+
+  <!-- Estabamos accediendo a una variable antes de que esta fuese leída.
+
+  "v-if" es una directiva de Vue.js que se utiliza para mostrar o ocultar un elemento en función de una condición.
+
+  En el ejemplo que has proporcionado, "countryInfo" es una propiedad o variable que se utiliza como la condición para mostrar o ocultar el elemento. Si "countryInfo" es verdadera, el elemento se mostrará. Si "countryInfo" es falsa, el elemento se ocultará.
+
+  En resumen, "v-if='countryInfo'" significa "mostrar este elemento solo si la propiedad 'countryInfo' es verdadera". -->
+
+  <div v-if="countryInfo">
+    <img
+      :src="`https://flagcdn.com/112x84/${countryInfo.alpha2Code.toLowerCase()}.png`"
+      :alt="`${countryInfo.name.common}`"
+    />
+    <h1>{{ countryInfo.name.common }}</h1>
+    <p>{{ countryInfo.capital[0] }}</p>
+    <p>{{ countryInfo.area }} km<sup>2</sup></p>
+    <p v-if="countryInfo.borders.length === 0">
+      Este país no tiene una fontera, es una isla
+    </p>
+    <ul
+      v-else
+      v-for="(borderCountry, index) in countryInfo.borders"
+      :key="index"
+    >
+      <RouterLink :to="`/country/${borderCountry}`">{{
+        borderCountry
+      }}</RouterLink>
+    </ul>
+  </div>
+</template>
+
 <!-- CSS HERE -->
 <style scoped></style>

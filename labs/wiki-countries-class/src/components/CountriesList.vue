@@ -1,25 +1,3 @@
-<!-- HTML HERE -->
-<template>
-  <div class="row">
-    <div class="col-4">
-      <RouterLink
-        v-for="(country, index) in countries"
-        :key="index"
-        :to="`/country/${country.alpha3Code}`"
-      >
-        <img
-          :src="`https://flagcdn.com/60x45/${country.alpha2Code.toLowerCase()}.png`"
-          :alt="`${country.name.common}`"
-        />
-        <p>{{ country.name.common }}</p>
-      </RouterLink>
-    </div>
-    <div class="col-sm-8">
-      <RouterView />
-    </div>
-  </div>
-</template>
-
 <!-- JS HERE -->
 <script setup>
 import { ref, reactive, onMounted } from "vue";
@@ -51,6 +29,28 @@ onMounted(() => {
   fetchCountries();
 });
 </script>
+
+<!-- HTML HERE -->
+<template>
+  <div class="row">
+    <div class="col-4">
+      <RouterLink
+        v-for="(country, index) in countries"
+        :key="index"
+        :to="`/country/${country.alpha3Code}`"
+      >
+        <img
+          :src="`https://flagcdn.com/60x45/${country.alpha2Code.toLowerCase()}.png`"
+          :alt="`${country.name.common}`"
+        />
+        <p>{{ country.name.common }}</p>
+      </RouterLink>
+    </div>
+    <div class="col-sm-8">
+      <RouterView />
+    </div>
+  </div>
+</template>
 
 <!-- CSS HERE -->
 <style scoped></style>
