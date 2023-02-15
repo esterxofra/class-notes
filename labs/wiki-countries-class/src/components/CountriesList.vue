@@ -32,25 +32,38 @@ onMounted(() => {
 
 <!-- HTML HERE -->
 <template>
-  <div class="row">
-    <div class="col-4">
-      <RouterLink
-        v-for="(country, index) in countries"
-        :key="index"
-        :to="`/country/${country.alpha3Code}`"
-      >
-        <img
-          :src="`https://flagcdn.com/60x45/${country.alpha2Code.toLowerCase()}.png`"
-          :alt="`${country.name.common}`"
-        />
-        <p>{{ country.name.common }}</p>
-      </RouterLink>
-    </div>
-    <div class="col-sm-8">
-      <RouterView />
+  <div class="container my-4">
+    <h1 class="text-center">Countries List</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <ul class="list-group">
+          <RouterLink
+            v-for="(country, index) in countries"
+            :key="index"
+            :to="`/country/${country.alpha3Code}`"
+          >
+            <li
+              class="list-group-item d-flex flex-column justify-content-center align-items-center"
+            >
+              <img
+                :src="`https://flagcdn.com/60x45/${country.alpha2Code.toLowerCase()}.png`"
+                :alt="`${country.name.common}`"
+              />
+              <p>{{ country.name.common }}</p>
+            </li>
+          </RouterLink>
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <RouterView />
+      </div>
     </div>
   </div>
 </template>
 
 <!-- CSS HERE -->
-<style scoped></style>
+<style scoped>
+.country-flag {
+  width: 120px;
+}
+</style>

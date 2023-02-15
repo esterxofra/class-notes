@@ -61,23 +61,43 @@ watch(countryCode, (newCountryCode) => {
 
   <div v-if="countryInfo">
     <img
-      :src="`https://flagcdn.com/112x84/${countryInfo.alpha2Code.toLowerCase()}.png`"
-      :alt="`${countryInfo.name.common}`"
+      :src="`https://flagcdn.com/w320/${countryInfo.alpha2Code.toLowerCase()}.png`"
+      alt=""
+      class="mb-4"
     />
-    <h1>{{ countryInfo.name.common }}</h1>
-    <p>{{ countryInfo.capital[0] }}</p>
-    <p>{{ countryInfo.area }} km<sup>2</sup></p>
-    <p v-if="countryInfo.borders.length === 0">
-      Este país no tiene una fontera, es una isla
-    </p>
-    <ul
-      v-else
-      v-for="(borderCountry, index) in countryInfo.borders"
-      :key="index"
-    >
-      <RouterLink :to="`/country/${borderCountry}`">{{
-        borderCountry
-      }}</RouterLink>
+    <h2>{{ countryInfo.name.common }}</h2>
+    <ul class="list-group list-group-flush">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <p class="fw-bold">Capital</p>
+
+        <p v-if="countryInfo.capital.length === 0">
+          This country does not have a capital
+        </p>
+        <p v-else>{{ countryInfo.capital[0] }}</p>
+      </li>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <p class="fw-bold">Area</p>
+        <p>{{ countryInfo.area }}.km<sup>2</sup></p>
+      </li>
+      <li class="list-group-item d-flex justify-content-between flex-column">
+        <p class="fw-bold">Borders:</p>
+        <p v-if="countryInfo.borders.length === 0">
+          This country has no borders! <br />
+          How about you invade and make some of your own!
+        </p>
+        <RouterLink
+          v-else
+          :to="`/country/${border}`"
+          v-for="(border, index) in countryInfo.borders"
+          :key="index"
+        >
+          {{ border }}
+        </RouterLink>
+      </li>
     </ul>
   </div>
 </template>
